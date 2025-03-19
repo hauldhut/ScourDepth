@@ -11,12 +11,12 @@
   - *For Sluice*: Chatterjee1994, Hopfinger2004, Sarkar2005, Dey2006
 
 - **Parameter Importance Strategies**:
-  - *VBSA*: 
+  - VBSA: 
     - *ANN*: mlp_nnet_sa_VBSA.R
     - *GMDH*: GMDHreg_perf_n_sa_VBSA.R
     - *SVR*: ksvm_kernlab_sa_VBSA.R
     - *RF*: randomForest_perf_n_sa_VBSA.R 
-  - *DCI*: GMDHreg_perf_n_sa_VBSA.R
+  - DCI: 
     - *ANN*: mlp_nnet_sa_DCI.R
     - *GMDH*: GMDHreg_sa_DCI.R
     - *SVR*: ksvm_kernlab_sa_DCI
