@@ -11,19 +11,17 @@
   - *For Sluice*: Chatterjee1994, Hopfinger2004, Sarkar2005, Dey2006
 
 - **Parameter Importance Strategies**:
-  - *ANN*: mlp_nnet_perf.R
-    - *VBSA*: mlp_nnet_sa_VBSA.R
-    - *DCI*: mlp_nnet_sa_DCI.R
-  - *GMDH*: GMDHreg_perf_n_sa_VBSA.R
-    - *VBSA*: GMDHreg_perf_n_sa_VBSA.R
-    - *DCI*: GMDHreg_sa_DCI.R
-  - *SVR: ksvm_kernlab_perf.R
-    - *VBSA*: ksvm_kernlab_sa_VBSA.R
-    - *DCI*: ksvm_kernlab_sa_DCI
-  - *RF*: randomForest_perf_n_sa_VBSA.R
-    - *VBSA*: randomForest_perf_n_sa_VBSA.R
-    - *DCI*: randomForest_sa_DCI.R  
-    
+  - *VBSA*: 
+    - *ANN*: mlp_nnet_sa_VBSA.R
+    - *GMDH*: GMDHreg_perf_n_sa_VBSA.R
+    - *SVR*: ksvm_kernlab_sa_VBSA.R
+    - *RF*: randomForest_perf_n_sa_VBSA.R 
+  - *DCI*: GMDHreg_perf_n_sa_VBSA.R
+    - *ANN*: mlp_nnet_sa_DCI.R
+    - *GMDH*: GMDHreg_sa_DCI.R
+    - *SVR*: ksvm_kernlab_sa_DCI
+    - *RF*: randomForest_sa_DCI.R  
+        
 - **Summary**: To summarize prediction performance and important parameters and visualize those in charts
   - *Performance (RMSE, CC): Summarize_Performance.R
   - *VBSA*: Summarize_VBSA_v2.R
