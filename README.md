@@ -12,7 +12,7 @@ Prediction of scour depth after sluice and culvert gates
 
 ## How to run
 - Install R packages
-  - *RandomWalkRestartMH, multiMiR, easyPubMed, igraph, foreach, doParallel, ROCR, ggplot2, Metrics, hash*
+  - *GMDHreg, nnet, randomForest, kernlab, rminer, foreach, doParallel, ggplot2, Metrics, hash*
 - Download the repo
 - Follow instructions in the folder **Code** to run
   
