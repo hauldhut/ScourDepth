@@ -1,19 +1,31 @@
 # This folder contains all source code used in the manuscript
 
-- **miRNA_M_LOOCV_Params.R**: Run Leave-One-Out cross-validation for miRNA Monoplex/Multiplex Networks
-  - *M1, M2, M3*: For miRNA Monoplex Networks, i.e., Mono_miRWalk, Mono_TargetScan and MonoNet_Integrated, respectively
-  - *M12*: For miRNA Multiplex Network, i.e., MultiNet_miRNA
+- **AI-based Approaches**: 
+  - *ANN: mlp_nnet_perf.R
+  - *GMDH*: GMDHreg_perf_n_sa_VBSA.R
+  - *SVR: ksvm_kernlab_perf.R
+  - *RF*: randomForest_perf_n_sa_VBSA.R
  
-- **miRNA_MH_LOOCV_ROC_Params.R**: Run Leave-One-Out cross-validation for Heterogeneous/Multiplex-Heterogeneous Networks of Diseases and miRNAs
-  - *H1, H2, H3*: For Heterogeneous Networks which connect a Disease Similarity Network with a miRNA Monoplex Network (i.e., M1, M2, M3, respectively)
-  - *MH*: For Multiplex-Heterogeneous Networks which connect a Disease Similarity Network with a miRNA Multiplex Network (i.e., M12)
+- **Empirical Equations**: empericalEquations_perf.R
+  - *For Culvert*: Lim1995, Abt1985, Emami2010, Taha2020
+  - *For Sluice*: Chatterjee1994, Hopfinger2004, Sarkar2005, Dey2006
 
-- **miRNA_Summarize_AUC_Params.R**: To investigate the prediction performance in terms of AUC resulted from **miRNA_M_LOOCV_Params.R** and **miRNA_MH_LOOCV_ROC_Params.R** by parameters
-
-- **miRNA_Summarize_AUC_Params.R**: To summarize prediction performance of the RWR-based methods on a miRNA multiplex network and a multiplex-heterogeneous network according to the change of parameters**
-  
-- **miRNA_Summarize_AUC_ROC.R**: To summarize and draw ROC curves resulted from **miRNA_M_LOOCV_Params.R** and **miRNA_MH_LOOCV_ROC_Params.R**
-
-- **miRNA_MH_Predict_Evidence.R**: To predict and select top 20 highly ranked miRNAs for each disease, then find evidence supporting the promissing disease-miRNA associations from existing databases and literature
-
+- **Parameter Importance Strategies**:
+  - *ANN: mlp_nnet_perf.R
+    - *VBSA*: mlp_nnet_sa_VBSA.R
+    - *DCI*: mlp_nnet_sa_DCI.R
+  - *GMDH*: GMDHreg_perf_n_sa_VBSA.R
+    - *VBSA*: GMDHreg_perf_n_sa_VBSA.R
+    - *DCI*: GMDHreg_sa_DCI.R
+  - *SVR: ksvm_kernlab_perf.R
+    - *VBSA*: ksvm_kernlab_sa_VBSA.R
+    - *DCI*: ksvm_kernlab_sa_DCI
+  - *RF*: randomForest_perf_n_sa_VBSA.R
+    - *VBSA*: randomForest_perf_n_sa_VBSA.R
+    - *DCI*: randomForest_sa_DCI.R  
+    
+- **Summary**: To summarize prediction performance and important parameters and visualize those in charts
+  - *Performance (RMSE, CC): Summarize_Performance.R
+  - *VBSA*: Summarize_VBSA_v2.R
+  - *DCI: Summarize_DCI_v2.R
 
