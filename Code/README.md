@@ -1,17 +1,17 @@
 # This folder contains all source code used in the manuscript
 
-- **AI-based Approaches**: 
-  - *ANN: mlp_nnet_perf.R
+- **Performance of AI-based Approaches (RMSE, CC)**: 
+  - *ANN*: mlp_nnet_perf.R
   - *GMDH*: GMDHreg_perf_n_sa_VBSA.R
-  - *SVR: ksvm_kernlab_perf.R
+  - *SVR*: ksvm_kernlab_perf.R
   - *RF*: randomForest_perf_n_sa_VBSA.R
  
-- **Empirical Equations**: empericalEquations_perf.R
+- **erformance of Empirical Equations (RMSE, CC)**: empericalEquations_perf.R
   - *For Culvert*: Lim1995, Abt1985, Emami2010, Taha2020
   - *For Sluice*: Chatterjee1994, Hopfinger2004, Sarkar2005, Dey2006
 
 - **Parameter Importance Strategies**:
-  - *ANN: mlp_nnet_perf.R
+  - *ANN*: mlp_nnet_perf.R
     - *VBSA*: mlp_nnet_sa_VBSA.R
     - *DCI*: mlp_nnet_sa_DCI.R
   - *GMDH*: GMDHreg_perf_n_sa_VBSA.R
