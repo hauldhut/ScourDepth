@@ -6,7 +6,7 @@
   - *SVR*: ksvm_kernlab_perf.R
   - *RF*: randomForest_perf_n_sa_VBSA.R
  
-- **erformance of Empirical Equations (RMSE, CC)**: empericalEquations_perf.R
+- **Performance of Empirical Equations (RMSE, CC)**: empericalEquations_perf.R
   - *For Culvert*: Lim1995, Abt1985, Emami2010, Taha2020
   - *For Sluice*: Chatterjee1994, Hopfinger2004, Sarkar2005, Dey2006
 
