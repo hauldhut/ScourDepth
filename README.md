@@ -1,5 +1,5 @@
 # ScourDepth
-Prediction of scour depth after sluice and culvert gates
+Prediction of scour depth at downstream of sluice and culvert gates
 
 ![Water Conveyance Structures](https://github.com/hauldhut/ScourDepth/blob/main/WaterConveyanceStructures.png)
 
@@ -7,7 +7,6 @@ Prediction of scour depth after sluice and culvert gates
 - **Data**: Contains all data 
 - **Code**: Contains all source code to reproduce all the results
 - **Results**: To store simulation results
-  - **Prediction**: To store collected evidence
 - **Figures**: To store generated figures from the simulation results
 
 ## How to run
