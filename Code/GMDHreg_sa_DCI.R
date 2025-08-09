@@ -55,13 +55,17 @@ n_train <- round(n*0.75)
 
 ntrial=100
 
-no_cores <- 7
+no_cores <- 15
 cl <- makeCluster(no_cores)
 registerDoParallel(cl)
 
 t=1
 
-G = 1
+if(datafile=="Culvert.csv"){
+  G = 2 # polynomial degree: 0=linear, 1=interaction, 2=quadratic
+}else{
+  G = 1
+}
 
 res <- foreach(t = 1:ntrial, .combine = cbind) %dopar% {
 

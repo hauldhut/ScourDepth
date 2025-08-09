@@ -42,8 +42,14 @@ library(doParallel)
 
 setwd("~/Manuscripts/105ScourDepth/Code")
 
-# datafile = "Culvert.csv"
-datafile = "Sluice.csv"
+datafile = "Culvert.csv"
+# datafile = "Sluice.csv"
+
+if (datafile == "Culvert.csv"){
+  C = 1
+}else{#all hyperparameters are the same as submitted
+  C = 5
+}
 
 a <- read.csv(paste0("../Data/",datafile))
 n <- nrow(a)
@@ -92,10 +98,10 @@ res <- foreach(t = 1:ntrial, .combine = cbind) %dopar% {
     
     model <- ksvm(dsa~.,
                        data = training,
-                       kernel = 'rbfdot',#Radial Basis kernel "Gaussian"
-                       kpar=list(sigma=0.05),#para for the selected kernel
-                       C=5,
-                       cross=3)
+                        C = C,
+                        epsilon = 0.1,
+                        kernel = 'rbfdot',#Radial Basis kernel "Gaussian"
+                    )
   
     pred_test = predict(model,as.matrix(testing[,1:(m.var-1)]))
     rmse =Metrics::rmse(testing[,m.var],pred_test)

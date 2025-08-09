@@ -30,8 +30,14 @@ library(doParallel)
 
 setwd("~/Manuscripts/105ScourDepth/Code")
 
-# datafile = "Culvert.csv"
-datafile = "Sluice.csv"
+datafile = "Culvert.csv"
+# datafile = "Sluice.csv"
+
+if (datafile == "Culvert.csv"){
+  C = 1
+}else{#all hyperparameters are the same as submitted
+  C = 5
+}
 
 a <- read.csv(paste0("../Data/",datafile))
 
@@ -87,8 +93,9 @@ res <- foreach(t = 1:ntrial, .combine = rbind) %dopar% {
   model <- fit(dsa~., 
                 data=a_train, 
                 model="ksvm", 
-                kpar=list(sigma=0.05),
-                C=5)
+                 epsilon = 0.1,
+                 kernel = 'rbfdot',
+                C=C)
   imp = Importance(model, data = a_train)
   
   pred_train = predict(model,as.matrix(a_train[,1:m.var]))

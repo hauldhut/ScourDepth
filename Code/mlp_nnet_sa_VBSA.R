@@ -33,8 +33,14 @@ library(doParallel)
 
 setwd("~/Manuscripts/105ScourDepth/Code")
 
-# datafile = "Culvert.csv"
-datafile = "Sluice.csv"
+datafile = "Culvert.csv"
+# datafile = "Sluice.csv"
+
+if (datafile == "Culvert.csv"){
+  size = 2
+}else{
+  size = 1
+}
 
 a <- read.csv(paste0("../Data/",datafile))
 max.dsa = max(a$dsa)
@@ -49,7 +55,7 @@ n_train <- round(n*0.75)
 
 ntrial=100
 
-no_cores <- 4
+no_cores <- 15
 cl <- makeCluster(no_cores)
 registerDoParallel(cl)
 
@@ -93,10 +99,10 @@ res <- foreach(t = 1:ntrial, .combine = rbind) %dopar% {
   model <- fit(dsa~.,
                 data=a_train,
                 model="mlp",
-                size = 2, #number of units in the hidden layer. Can be zero if there are skip-layer units. (a number of hidden neurons was set to an empirical value [i.e. an average of the number of features and number of classes)
-                rang = 0.1, #Initial random weights on [-rang, rang]. Value about 0.5 unless the inputs are large, in which case it should be chosen so that rang * max(|x|) is about 1.
-                decay = 5e-4, #parameter for weight decay. Default 0.
-                maxit = 200) #maximum number of iterations. Default 100.
+               size = size, #number of units in the hidden layer. Can be zero if there are skip-layer units.
+               decay = 0.01, #parameter for weight decay. Default 0.
+               ) #maxit = 100 #maximum number of iterations. Default 100.
+  
   imp = Importance(model, data = a_train)
   
   pred_train = predict(model,as.matrix(a_train[,1:m.var]))*max.dsa

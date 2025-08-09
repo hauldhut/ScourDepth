@@ -43,6 +43,14 @@ setwd("~/Manuscripts/105ScourDepth/Code")
 # datafile = "Culvert.csv"
 datafile = "Sluice.csv"
 
+if (datafile == "Culvert.csv"){
+  ntree = 300
+  nodesize = 1
+}else{
+  ntree = 500
+  nodesize = 3
+}
+
 a <- read.csv(paste0("../Data/",datafile))
 
 n <- nrow(a)
@@ -93,8 +101,11 @@ res <- foreach(t = 1:ntrial, .combine = cbind) %dopar% {
 
   
     model = randomForest(x = x_train,
-                                 y = y_train,
-                                 ntree = 500, mtry = sqrt(ncol(x_train)))
+                         y = y_train,
+                         ntree = ntree, 
+                         mtry = 3,
+                         nodesize = nodesize,
+                        )
 
  
     pred_test = predict(model,as.matrix(testing[,1:(m.var-1)]))
